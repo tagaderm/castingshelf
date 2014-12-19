@@ -1,0 +1,33 @@
+This is {{ username }}'s user profile page
+<br>
+<br>
+<!-- {{ list_count }} -->
+{% if book_list %}
+
+	Book(s): 
+        {% for book in book_list %}
+        	{{ book.title }}
+        	<br>
+        {% endfor %}
+
+{% endif %}
+
+{% if character_list %}
+
+    <ul>
+    {% for character in character_list %}        
+        Character: {{ character }}
+        <br>        
+        <br>
+    {% endfor %}
+
+    	
+
+    </ul>
+{% else %}
+    <p>No characters are available.</p>
+{% endif %}
+
+
+
+<!-- Write your comments here -->
