@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'shelf',
     'account',
-    #'customauth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,3 +87,8 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 #AUTH_USER_MODEL = 'customauth.MyUser'
 AUTH_PROFILE_MODULE = 'account.UserProfile'
+
+try:
+    from local_settings import *
+except ImportError:
+    print 'local_settings.py not found'
